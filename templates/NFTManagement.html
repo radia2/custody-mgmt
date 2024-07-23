@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custody gateway API Operations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Custody gateway API Operations</h1>
+   
+ <!-- creation of a wallet -->
+ <section>
+    <h2>Create a Wallet</h2>
+    <form id="create-wallet-form">
+        <input type="text" name="client" placeholder="Client" required />
+        <input type="text" name="network" placeholder="Network" required />
+        <input type="text" name="provider" placeholder="Provider" required />
+        <input type="text" name="bearerToken" placeholder="Bearer Token" required />
+        <button type="submit">Create Wallet</button>
+    </form>
+    <div id="wallet-create-result"></div>
+</section>
+
+    <!-- Form for gettong a wallet infos -->
+    <h2>Get Wallet Information</h2>
+    <form id="get-wallet-info-form">
+        <label for="client">Client:</label>
+        <input type="text" id="client" name="client">
+        <label for="network">Network:</label>
+        <input type="text" id="network" name="network">
+        <label for="walletBearerToken">Bearer Token:</label>
+        <input type="text" id="walletBearerToken" name="walletBearerToken">
+        <button type="submit">Get Wallet Info</button>
+    </form>
+    <div id="wallet-info-result"></div>
+    
+    <!-- Form for getting owned NFTs -->
+    <section>
+        <h2>Get owned NFTs</h2>
+        <form id="get-owned-nfts-form">
+            <input type="text" id="owned-client" name="client" placeholder="Client" required>
+            <input type="text" id="owned-network" name="network" placeholder="Network" required>
+            <input type="text" id="owned-bearer-token" name="bearerToken" placeholder="Bearer Token" required>
+            <button type="submit">Get Owned NFTs</button>
+        </form>
+        <div id="owned-nfts-list"></div> 
+    </section>
+
+<!-- Form for getting NFT info from DL -->
+<section>
+    <h2>Get NFT Info from DL</h2>
+    <form id="get-link-info-form">
+        <div>
+            <label for="client">Client:</label>
+            <input type="text" id="client" name="client" required>
+        </div>
+        <div>
+            <label for="network">Network:</label>
+            <input type="text" id="network" name="network" required>
+        </div>
+        <div>
+            <label for="link">Link:</label>
+            <input type="text" id="link" name="link" required>
+        </div>
+        <div>
+            <label for="bearerToken">Bearer Token:</label>
+            <input type="text" id="bearerToken" name="bearerToken" required>
+        </div>
+        <button type="submit">Get Info</button>
+    </form>
+    <div id="link-info-result"></div>
+</section>
+
+<!-- Form for Claiming an NFT -->
+<section>
+    <h2>Claim NFT</h2>
+    <form id="claim-nft-form">
+        <input type="text" id="claim-client" name="client" placeholder="Client" required>
+        <input type="text" id="claim-network" name="network" placeholder="Network" required>
+        <input type="text" id="claim-bearer-token" name="bearerToken" placeholder="Bearer Token" required>
+        <input type="text" id="claim-link" name="link" placeholder="Link" required>
+        <button type="submit">Claim NFT</button>
+    </form>
+</section>
+
+    <!-- Form for Transferring an NFT -->
+    <section>
+        <h2>Transfer NFT</h2>
+        <form id="transfer-nft-form">
+        <input type="text" name="client" placeholder="Client" required>
+        <input type="text" name="network" placeholder="Network" required>
+        <input type="text" name="bearerToken" placeholder="Bearer Token" required>
+        <input type="text" name="certificateId" placeholder="Certificate ID" required>
+        <input type="text" name="toAddress" placeholder="To Address" required>
+        <button type="submit">Transfer NFT</button>
+        </form>
+    </section>
+
+    <!-- Form for creating transfer link -->
+    <section>
+        <h2>Create Transfer Link</h2>
+        <form id="create-transfer-link-form" class="horizontal-form">
+            <div class="form-group">
+                <label for="client">Client:</label>
+                <input type="text" id="client" name="client" required>
+            </div>
+
+            <div class="form-group">
+                <label for="network">Network:</label>
+                <input type="text" id="network" name="network" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bearerToken">Bearer Token:</label>
+                <input type="text" id="bearerToken" name="bearerToken" required>
+            </div>
+
+            <div class="form-group">
+                <label for="smartAssetId">Smart Asset ID:</label>
+                <input type="text" id="smartAssetId" name="smartAssetId" required>
+            </div>
+
+            <button type="submit">Create Transfer Link</button>
+        </form>
+        <div id="transfer-link-result"></div>
+    </section>
+    <!-- Form for Creating a Proof Link -->
+    <section>
+        <h2>Create Proof Link</h2>
+        <form id="create-proof-link-form">
+            <input type="text" name="client" placeholder="Client" required>
+            <input type="text" name="network" placeholder="Network" required>
+            <input type="text" name="bearerToken" placeholder="Bearer Token" required>
+            <input type="text" name="certificateId" placeholder="Certificate ID" required>
+            <input type="text" name="protocolName" placeholder="Protocol Name" required>
+            <button type="submit">Create Proof Link</button>
+        </form>
+        
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
